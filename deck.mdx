@@ -76,7 +76,8 @@ export default WhiteLayout
 
 # Okay, mamy to za sobą...
 
-<!-- ---
+---
+
 export default WhiteLayout
 
 
@@ -84,8 +85,8 @@ export default WhiteLayout
   <div>
     <RandomlyPlaced
       style={{
-        bottom: '50%',
-        left: '10%'
+        bottom: '30%',
+        right: '5%'
       }}
       customStyle={{backgroundColor: '#ffffff'}}
     >
@@ -95,19 +96,20 @@ export default WhiteLayout
   <div>
     <RandomlyPlaced
       style={{
-        bottom: '50%',
-        left: '34%'
+           bottom: '20%',
+        right: '5%'
       }}
       customStyle={{backgroundColor: '#ffffff'}}
     >
-       Bartek
+       Bartek Widlarz
     </RandomlyPlaced>
   </div>
   <div>
     <RandomlyPlaced
       style={{
+        transform: 'rotate(5deg)',
         top: '10%',
-        right: '20%'
+        left: '20%'
       }}
       customStyle={{backgroundColor: '#ffffff'}}
     >
@@ -117,8 +119,9 @@ export default WhiteLayout
   <div>
     <RandomlyPlaced
       style={{
+                transform: 'rotate(5deg)',
         top: '70%',
-        right: '20%'
+        left: '20%'
       }}
       customStyle={{backgroundColor: '#ffffff'}}
     >
@@ -128,55 +131,124 @@ export default WhiteLayout
   <div>
     <RandomlyPlaced
       style={{
-        transform: 'rotate(10deg)',
-        bottom: '30%',
-        right: '20%'
+        transform: 'rotate(5deg)',
+        top: '40%',
+        left: '20%'
       }}
+      customStyle={{backgroundColor: '#ffffff'}}
     >
-      constructor lol
+      Blog techniczny: bwidlarz.com
     </RandomlyPlaced>
   </div>
+  
   <div>
     <RandomlyPlaced
       style={{
         transform: 'rotate(-10deg)',
-        bottom: '10%',
-        right: '30%'
+        top: '10%',
+        left: '60%'
       }}
+            customStyle={{backgroundColor: '#ffffff'}}
     >
-      jak to mozna state = i jest
+      React
     </RandomlyPlaced>
   </div>
   <div>
     <RandomlyPlaced
       style={{
         transform: 'rotate(-20deg)',
-        top: '10%',
+       top: '20%',
         left: '60%'
       }}
+    customStyle={{backgroundColor: '#ffffff'}}
     >
-      który mamy rok?!
+      React Native
     </RandomlyPlaced>
   </div>
   <div>
     <RandomlyPlaced
       style={{
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        fontWeight: 'bold',
-        fontSize: '5rem',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+      transform: 'rotate(-30deg)',
+       top: '30%',
+        left: '62%'
       }}
+      customStyle={{backgroundColor: '#ffffff'}}
     >
-      REKLAMA HOOKÓW!
+      TypeScript
     </RandomlyPlaced>
   </div>
-</Appear> -->
 
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(10deg)',
+        top: '10%',
+        left: '10%'
+      }}
+            customStyle={{backgroundColor: '#ffffff'}}
+    >
+      Swift
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(10deg)',
+        top: '20%',
+        left: '10%'
+      }}
+    customStyle={{backgroundColor: '#ffffff'}}
+    >
+      Kotlin
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+      transform: 'rotate(10deg)',
+        top: '30%',
+        left: '10%'
+      }}
+      customStyle={{backgroundColor: '#ffffff'}}
+    >
+      Elixir
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+      transform: 'rotate(10deg)',
+        top: '40%',
+        left: '0%'
+      }}
+      customStyle={{backgroundColor: '#ffffff'}}
+    >
+      Fullstack Serverless
+    </RandomlyPlaced>
+  </div>
+</Appear>
+
+---
+export default WhiteLayout
+
+# Mentorzy 👏
+<Appear>
+  <div>
+    <strong style={{fontSize: '2em'}}>Bartłomiej Bajda</strong>
+  </div>
+  <div>
+    <strong style={{fontSize: '2em'}}>Daniel Grychtoł</strong>
+  </div>
+  <div>
+    <strong style={{fontSize: '2em'}}>Kamil Szubrycht</strong>
+  </div>
+  <div>
+    <strong style={{fontSize: '2em'}}>Katarzyna Tobiś</strong>
+  </div>
+  <div>
+    <strong style={{fontSize: '2em'}}>Michał Czapkowicz</strong>
+  </div>
+</Appear>
 
 ---
 
@@ -184,12 +256,12 @@ export default WhiteLayout
 
 # Agenda
 
-- 9:00 - 10:00 - rózności
+- 9:00 - 10:00 - różności
 - 10:00 - 10:15 - przerwa
 - 10:15 - 12:30 - I etap
 - 12:30 - 13:15 - jemy pizze
 - 13:15 - 16:00 - II etap 
-
+- Fajne rzeczy: https://github.com/TheWidlarzGroup
 ---
 
 export default WhiteLayout
@@ -204,14 +276,13 @@ export default WhiteLayout
 
 # 🚀 Let's get started 🚀
 
-
 ---
-
+  <div>
+      <strong style={{fontSize: '2em'}}>Potrzebowałeś mieć stan albo efekty uboczne w komponencie Reactowym
+      </strong>
+  </div>
 
 <Appear>
-  <div>
-      <strong style={{fontSize: '2em'}}>Potrzebowałeś mieć stan albo efekty uboczne w komponencie Reactowym </strong>
-  </div>
   <div>
       <strong style={{fontSize: '2em'}}>= klasa</strong>
   </div>
@@ -562,6 +633,10 @@ mowią one o tym jakie sa ograniczenia w uzywaniu hookow
 
 ---
 
+<img  height="500x" src="public/qr-code.png" />
+
+---
+
 ```notes
 useState robimy na poziomie komponentu pojedynczego kontaktu, tak jest naprosiciej, tylko wtedy lista nie wiem ktory kompoennt jest 
 hoverowany
@@ -631,12 +706,11 @@ Nie musieliście zarywać soboty zeby go zobaczyc.
 To co jest w return trafia plus minus na ekran, z nowym count. 
 - następnie react sprawdza co jest w useEffect i to też odpala
 
-
 1. Moze byc trudno uwierzyć, ale useEffect słuzy przede wszystkim do synchronizacji danych 
 2. jest niskopoziomowym API który jest dość złozony i malo intuicyjny
 3. razem z useState oraz paroma innymi pozwala tworzyć własne hooki
 
-Wiem co chcecie zapytać:
+Wiem co chcecie zapytać.
 
 ```
 
@@ -756,6 +830,11 @@ Ogarniemy. Subskrybujemy się.
 ```notes
 Ogarniemy. Deps.
 
+
+React chce zeby useEffect wiedział od czego zalezna jest ta logika w useEffect
+Potrzebuje tego zeby wiedziec czy ma włączyć ten kod do synchronizacji podczas jego odpalenia czy nie. 
+
+I tutaj mozna dlugo mowic o depsach. Bo co np. kiedy uzywamy w useEffect funkcji, która ma jakąś zaleznosc? W wiekszosci przypadkow wystarczy wyciagnac tę funkcje całkiem poza komponent. Innym razem mozna wsadzic te funkcje do useEffect. Są scenariusze kiedy obie strategie zawodza, wtedy... wtedy zapraszam na kolejne warsztaty gdzie zajmiemy sie między innymi useCallback i useReducer :D 
 ```
 
 ## Ogarniemy. Deps.
@@ -820,7 +899,6 @@ Kazdy useEffect dostaje wtedy swoje depsy.
 
 Oszukiwanie. 
 Kto nigdy nie okłamał niech pierwszy rzuci kamień.
-
 Na czym polega oszustwo tutaj?
 
 Że podaje że ten useEffect nie ma żadnych zależności, a ma - count.
@@ -828,12 +906,6 @@ Jaki jest tego skutek?
 useEffect zostanie odpalony tylko raz, a nie co każdy render. 
 I nie jak się count zmieni.
 
-
-
-React chce zeby useEffect wiedział od czego zalezna jest ta logika w useEffect
-Potrzebuje tego zeby wiedziec czy ma włączyć ten kod do synchronizacji podczas tego odpalenia czy nie. 
-
-I tutaj mozna dlugo mowic o depsach. Bo co np. kiedy uzywamy w useEffect funkcji, która ma jakąś zaleznosc? W wiekszosci przypadkow wystarczy wyciagnac tę funkcje całkiem poza komponent. Innym razem mozna wsadzic te funkcje do useEffect. Są scenariusze kiedy obie strategie zawodza, wtedy... wtedy zapraszam na kolejne warsztaty gdzie zajmiemy sie między innymi useCallback i useReducer :D 
 
 
 ```
@@ -864,6 +936,10 @@ I tutaj mozna dlugo mowic o depsach. Bo co np. kiedy uzywamy w useEffect funkcji
   <div >3. ⭐Dodaj error handling gdyby coś poszło nie tak</div>
   <div >4. ⭐Dodaj button “Załaduj jeszcze 3” po kliknięciu doładuj 3 elementy z API</div>
 </Appear>
+
+---
+
+<img  height="500x" src="public/qr-code.png" />
 
 ---
 
@@ -981,6 +1057,7 @@ funkcja do updatowania ulubionego.
       />  </div>
 </Appear>
 
+---
 
 ```notes
 Gotowi żeby to zobaczyć? 
@@ -1017,6 +1094,17 @@ Ten syntax z useStatem, że przyjmuje funkcje, to jest lazy loading. Można się
 </Appear>
 
 ---
-## Po odpowiedzi zapraszam wspólnie do repo na stronę:
 
+<img  height="500x" src="public/qr-code.png" />
+
+---
+
+# Dziękujemy za udział!
+
+---
+
+# ⚛️ React Hooks ⚛️
+#
+#
+# 07.03.2020 Kraków, Poland
 ---
