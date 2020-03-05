@@ -5,7 +5,7 @@
 
 import React from 'react'
 
-function RandomlyPlaced({children, style, ...props}) {
+function RandomlyPlaced({children, style, customStyle, ...props}) {
   return (
     <div style={{position: 'absolute', zIndex: 2, fontSize: '1.5em', ...style}}>
       {children ? (
@@ -14,6 +14,7 @@ function RandomlyPlaced({children, style, ...props}) {
             borderRadius: 6,
             padding: 4,
             backgroundColor: 'rgba(1,22,39, 0.6)',
+            ...customStyle,
           }}
           {...props}
         >
