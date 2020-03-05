@@ -1,0 +1,908 @@
+import './script.js'
+import {Appear} from 'mdx-deck'
+import WhiteLayout from './components/white-layout'
+import {RandomlyPlaced} from './components/randomly-placed'
+import DemoLayout from './components/demo-layout'
+import {UnControlled as CodeMirror} from 'react-codemirror2'
+
+import {
+  useState, 
+  setState, 
+  oldState, 
+  intersujeNasUseState, 
+  syntaxUseState, 
+  wiecejStatowUse, 
+  wiecejStateowNieUse,
+  hoverCode,
+  filtrowaniePoImieniu,
+  oficjalnieUseEffect,
+  syntaxUseEffect,
+  przykladowoUseEffectSub,
+  przykladowoUseEffectDeps,
+  kilkaUseEffect,
+  jaChceTylkoRaz,
+  useEffectRozwiazanie,
+  useFavCustom,
+  useFavCode,
+  czystaFunkcja
+} from './code'
+
+export {default as theme} from './theme'
+
+export default WhiteLayout
+
+# Poznajmy się!
+### Za moment rozpoczniemy icebreakera
+### Przełamiemy lody i poznamy innych uczestników oraz mentorów
+
+<img width="70px" height="70px" src="public/standard/big-smile.png" />
+
+---
+
+export default WhiteLayout
+
+# Jak to?!
+### To będzie test z rozumienia algorytmu:
+1. wstań 
+2. podejdź i przywitaj się z nieznajomą osobą która jest najblizej
+3. powiedz coś o sobie przez 1min
+4. następnie daj szansę powiedzieć coś drugiej osobie przez 1min
+5. prowadzący daje sygnał do "zmiany!"
+6. powtarzaj punkty od 2 do 5 az prowadzący powie "koniec!"
+
+
+<img width="70px" height="70px" src="public/standard/big-smile.png" />
+
+---
+
+export default WhiteLayout
+
+# Okay, mamy to za sobą...
+
+---
+
+export default WhiteLayout
+
+# Agenda
+
+- 9:00 - 10:00 - rózności
+- 10:00 - 10:15 - przerwa
+- 10:15 - 12:30 - I etap
+- 12:30 - 13:15 - jemy pizze
+- 13:15 - 16:00 - II etap 
+
+---
+
+export default WhiteLayout
+
+# O czym są te warsztaty
+
+- funkcje i klasy
+- stan komponentu z useState
+- rózne rzeczy z useEffect
+- własne hooki
+- fajne linki
+
+---
+
+# Let's get started
+
+<img width="154px" height="54px" src="public/standard/dash-race-car.png" />
+
+---
+
+export default DemoLayout
+
+<div style={{fontSize: 40, textAlign: 'left'}}>
+  <ul>
+    <li>Potrzebowałeś mieć stan albo efekty uboczne w komponencie Reactowym?</li>
+      <Appear>
+        <li>= klasa</li>
+        <li>Nie potrzebowałeś</li>
+        <li>= funkcja</li>
+      </Appear>
+  </ul>
+</div> 
+
+---
+
+
+export default DemoLayout
+
+<div>
+
+<CodeMirror
+      value={oldState}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+<Appear>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(30deg)',
+        top: '30%',
+        left: '20%'
+      }}
+    >
+      bind?
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(30deg)',
+        bottom: '10%',
+        left: '10%'
+      }}
+    >
+      a gdzie fat arrow?
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(10deg)',
+        bottom: '30%',
+        right: '20%'
+      }}
+    >
+      constructor lol
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(-10deg)',
+        bottom: '10%',
+        right: '30%'
+      }}
+    >
+      jak to mozna state = i jest
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(-20deg)',
+        top: '10%',
+        left: '60%'
+      }}
+    >
+      który mamy rok?!
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        fontWeight: 'bold',
+        fontSize: '5rem',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      REKLAMA HOOKÓW!
+    </RandomlyPlaced>
+  </div>
+</Appear>
+
+</div>
+
+```notes
+```
+---
+
+<CodeMirror
+      value={setState}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+
+```notes
+```
+---
+
+<CodeMirror
+      value={useState}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+
+```notes
+```
+---
+
+# useState
+
+```notes
+Kilka rzeczy odnośnie hooków omówimy na przykładzie useState a kilka na useEffect
+```
+---
+
+
+<CodeMirror
+      value={syntaxUseState}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+
+```notes
+tak wygląda syntax z useState
+jest tutaj kilka rzeczy
+- hook useState przyjmuje wartość początkową stanu w przy przypadku 0
+- zwraca tablice gdzie pierwszym elementem jest aktualna wartość stanu,
+- drugim elementem jest setter dla stanu, jest to funkcja która przyjmuje jako wartość nową wartość stanu
+```
+---
+
+
+<CodeMirror
+      value={wiecejStatowUse}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+
+```notes
+```
+---
+
+<CodeMirror
+      value={wiecejStateowNieUse}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+
+```notes
+```
+
+---
+
+# Czym są czyste funkcje? 
+# (pure function)
+
+```notes
+funkcje bez efektów ubocznych
+```
+
+---
+
+# y = x + 1
+# dla x = 10
+<Appear>
+  <div >11</div>
+  <div >11</div>
+  <div >11</div>
+  <div >dla danych wejściowych x, funkcja zwraca zawsze ten sam wynik</div>
+  <div >ZAWSZE</div>
+  <div >TEN</div>
+  <div >SAM</div>
+  <div >WYNIK</div>
+</Appear>
+
+---
+
+```notes
+czy ta funkcja jest czysta?
+matematycznie nie jest
+wiec jak jest?
+jest czysta na innym poziomie
+jezeli wezmiemy pod uwage ze kazdy komponent to jest funkcja propsow i stanu
+to taki komponent zawsze bedzie zwracał ten sam wynik przy tej samej konfiguracji propsow i stanu
+w tym sensie jest czysty i w tym sensie hooki zbliazaja nas do programowania funkcyjnego
+```
+
+<CodeMirror
+      value={useState}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+
+---
+
+<CodeMirror
+      value={czystaFunkcja}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+
+---
+
+## Kto potrafi wymienić reguły jak bindowane jest `this` w JavaScriptowych klasach?
+
+---
+
+``` notes
+
+Ktoś na rekrutacji będzie Was pytał o `this`? Nie, bo rekrutujący sami nie wiedzą. 
+Tylko że potem podczas pisania kodu, to Wy będziecie siedzieć i debugować i się frustrować
+
+```
+
+## ...bo ja nie xD
+
+---
+
+<div >"...this is not an author-time binding but a runtime binding. It is contextual based on the conditions of the function's invocation. this binding has nothing to do with where a function is declared, but has instead everything to do with the manner in which the function is called."</div>
+
+_You dont know JS_
+
+---
+```notes
+Funkcje są prostsze od klas. 
+Temu cięzko zaprzeczyć
+Funkcji uczyiśmy się w podstawowce
+A tego jak dzialaja jsowe klasy niektorzy z nas nigdy sie nie nauczyc
+
+Ale czy hooki są bez wad?
+Sami zobaczycie
+Ale póki co mam dla was pierwszy zestaw złych wiesci
+zeby uzywac hookow, trzeba pamietac o paru regulach
+```
+
+<Appear>
+  <div>
+    <strong style={{fontSize: '2em'}}>Funkcje są prostsze </strong>
+  </div>
+  <div>
+    <strong style={{fontSize: '2em'}}>Ale czy Hooki są bez wad?</strong>
+  </div>
+  <div>
+    <strong style={{fontSize: '2em'}}>Jak chcesz uzywac hooków, musisz nauczyc się paru reguł</strong>
+  </div>
+</Appear>
+
+---
+
+```notes
+w oficjalnej dokumentacji jest mowa o 2 regulach
+ale prawda jest taka ze jest ich 3
+mowią one o tym jakie sa ograniczenia w uzywaniu hookow
+```
+
+## "Rules of Hooks"
+<Appear>
+  <div>
+    <strong style={{fontSize: '2em'}}>1. Uzywaj hooków tylko na poziomie komponentu, bezpośrednio w jego zakresie. Nie w pętli, nie w ifie, nie w zagniezdzonej funkcji</strong>
+  </div>
+  <div>
+    <strong style={{fontSize: '2em'}}>2. Nie uzywaj hooków poza funkcyjnymi komponentami oraz własnymi hookami.</strong>
+  </div>
+</Appear>
+
+---
+
+# Czas na pierwsze zadania!
+
+<Appear>
+  <div >1. Zbuduj prosty komponent do wyświetlania pojedynczego kontaktu (Hint: you can use randomuser.me for user data - just copy it over to your code.)</div>
+  <div >2. Zbuduj komponent który wyświetla listę kontaktów</div>
+  <div >3. Pokazuj/chowaj szczegóły kontaktu po najechaniu kursorem (bez uzycia hover CSS)</div>
+  <div >4. Dodaj funkcjonalność filtrowania po imieniu</div>
+  <div >5. ⭐Dodaj przycisk po kliknieciu spowoduje ze szczegóły kontaktu będą cały czas widoczne</div>
+  <div >6. ⭐Filtruj po wszystkich polach, nie tylko po imieniu</div>
+  <div >7. ⭐Filtrowanie powinno być niewrazliwe na wielkosc liter</div>
+  <div >8. ⭐Dodaj przycisk do sortowania kontaktów po imieniu; kliknięcie przycisku spowoduje zmiane kierunku sortowania</div>
+  <div >9. ⭐Dodaj ikone kierunku sortowania (↑/↓)</div>
+</Appear>
+
+---
+
+```notes
+useState robimy na poziomie komponentu pojedynczego kontaktu, tak jest naprosiciej, tylko wtedy lista nie wiem ktory kompoennt jest 
+hoverowany
+
+```
+## Hover
+<Appear>
+  <div>
+      <CodeMirror
+            value={hoverCode}
+            options={{
+              mode: 'jsx',
+              theme: 'night-owl',
+              lineNumbers: false,
+              readOnly: 'nocursor',
+            }}
+      />
+  </div>
+</Appear>
+
+---
+
+```notes
+useState robimy na poziomie komponentu pojedynczego kontaktu, 
+tak jest naprosiciej, tylko wtedy lista nie wie ktory kompnent jest hoverowany
+```
+
+## Filtrowanie po imieniu
+<Appear>
+  <div>
+      <CodeMirror
+            value={filtrowaniePoImieniu}
+            options={{
+              mode: 'jsx',
+              theme: 'night-owl',
+              lineNumbers: false,
+              readOnly: 'nocursor',
+            }}
+      />
+  </div>
+</Appear>
+
+---
+
+```notes
+Ankieta live:
+- Kto z Was uzywal juz useEffect?
+- Kto robi to na codzien w pracy?
+```
+
+## useEffect!
+<Appear>
+  <div>
+    <strong style={{fontSize: '2em'}}>No to teraz zaczyna się magia!</strong>
+  </div>
+</Appear>
+
+---
+
+```notes
+To jest oficjalny przykład z dokumentacji. 
+Nie musieliście zarywać soboty zeby go zobaczyc.
+
+- jest useState i useEffect
+- klikasz button, on reaguje odpaleniem setCount z nową, większa wartością
+- to triggeruje odpaleniem funkcji Example jeszcze raz. 
+To co jest w return trafia plus minus na ekran, z nowym count. 
+- następnie react sprawdza co jest w useEffect i to też odpala
+
+
+1. Moze byc trudno uwierzyć, ale useEffect słuzy przede wszystkim do synchronizacji danych 
+2. jest niskopoziomowym API który jest dość złozony i malo intuicyjny
+3. razem z useState oraz paroma innymi pozwala tworzyć własne hooki
+
+Wiem co chcecie zapytać:
+
+```
+
+## To jest oficjalny przykład:
+<CodeMirror
+      value={oficjalnieUseEffect}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+<Appear>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(20deg)',
+        top: '30%',
+        left: '20%'
+      }}
+    >
+      Jak zyc bez cyklu zycia..?
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(30deg)',
+        bottom: '10%',
+        left: '10%'
+      }}
+    >
+      Gdzie pobierac dane?
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(10deg)',
+        bottom: '30%',
+        right: '20%'
+      }}
+    >
+      Słyszaleś kiedyś o animacjach?
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        transform: 'rotate(-10deg)',
+        bottom: '10%',
+        right: '30%'
+      }}
+    >
+       To teraz gdzie mogę ustawić listenera?
+    </RandomlyPlaced>
+  </div>
+  <div>
+    <RandomlyPlaced
+      style={{
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        fontWeight: 'bold',
+        fontSize: '5rem',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      Ogarniemy
+    </RandomlyPlaced>
+  </div>
+</Appear>
+
+
+---
+
+```notes
+Ogarniemy. Syntax
+
+```
+
+## Ogarniamy. Syntax.
+<CodeMirror
+      value={syntaxUseEffect}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+
+---
+
+```notes
+Ogarniemy. Subskrybujemy się.
+
+```
+
+## Ogarniamy. Subskrybujemy się.
+<CodeMirror
+      value={przykladowoUseEffectSub}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+
+---
+
+```notes
+Ogarniemy. Deps.
+
+```
+
+## Ogarniemy. Deps.
+<CodeMirror
+      value={przykladowoUseEffectDeps}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+
+---
+
+
+```notes
+Ogarniamy już syntax. Co dalej?
+
+0. Kolejność dzialania jest taka. React najpierw renderuje tego jsx'a potem pyta sie komponentu co tam dla mnie masz w tym useEffect. React decyduje sie na uruchomienie zawartosci useEffecta po kazdym renderze.
+
+1. Uwaga, jesteśmy w funkcjach, i domknięciach. Jak useEffect się domknie na danym zestawie propsow i state'u, to nie będzie wiedział o nowych. 
+
+W klasach jest inaczej, w klasach, funkcje podrózują w czasie. Przez to ze `this` jest mutowalny. Oczywiście mozna to naprawić, ale to nie na teraz.
+
+```
+
+## Ogarniamy już syntax. Co dalej?
+<CodeMirror
+      value={oficjalnieUseEffect}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+
+---
+
+```notes
+
+Mozna mieć więcej niz jeden useEffect w komponencie. Czyli mozemy rozdzielic logike na mniejsze, adekwatne fragmenty. Jakby porównanc do componenDidMount gdzie trzeba bylo wszystko do jego wrzucac do na plus.
+
+Kazdy useEffect dostaje wtedy swoje depsy.
+```
+
+## Można mieć więcej niż jeden useEffect
+<CodeMirror
+      value={kilkaUseEffect}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+
+---
+
+```notes
+
+Oszukiwanie. 
+Kto nigdy nie okłamał niech pierwszy rzuci kamień.
+
+Na czym polega oszustwo tutaj?
+
+Że podaje że ten useEffect nie ma żadnych zależności, a ma - count.
+Jaki jest tego skutek? 
+useEffect zostanie odpalony tylko raz, a nie co każdy render. 
+I nie jak się count zmieni.
+
+
+
+React chce zeby useEffect wiedział od czego zalezna jest ta logika w useEffect
+Potrzebuje tego zeby wiedziec czy ma włączyć ten kod do synchronizacji podczas tego odpalenia czy nie. 
+
+I tutaj mozna dlugo mowic o depsach. Bo co np. kiedy uzywamy w useEffect funkcji, która ma jakąś zaleznosc? W wiekszosci przypadkow wystarczy wyciagnac tę funkcje całkiem poza komponent. Innym razem mozna wsadzic te funkcje do useEffect. Są scenariusze kiedy obie strategie zawodza, wtedy... wtedy zapraszam na kolejne warsztaty gdzie zajmiemy sie między innymi useCallback i useReducer :D 
+
+
+```
+
+## Oszukiwanie
+<Appear>
+  <div>
+    <CodeMirror
+          value={jaChceTylkoRaz}
+          options={{
+            mode: 'jsx',
+            theme: 'night-owl',
+            lineNumbers: false,
+            readOnly: 'nocursor',
+          }}
+    />
+  </div>
+</Appear>
+
+---
+
+# Czas na kolejne zadania!
+
+<Appear>
+  <div >Podpowiedź od razu: będziecie musieli trochę łamać reguły</div>
+  <div >1. Zamiast hardcodować listę kontaktów, pobierz 5 kontaktów z API, np. z randomuser.me</div>
+  <div >2. Dodaj loader ktory sie wyświetla podczas pobierania danych</div>
+  <div >3. ⭐Dodaj error handling gdyby coś poszło nie tak</div>
+  <div >4. ⭐Dodaj button “Załaduj jeszcze 3” po kliknięciu doładuj 3 elementy z API</div>
+</Appear>
+
+---
+
+```notes
+No to teraz zaczyna się magia!
+Ankieta live:
+- Kto z Was uzywal juz useEffect?
+- Kto robi to na codzien w pracy?
+
+Wstęp:
+1. Moze byc trudno uwierzyć, ale useEffect słuzy przede wszystkim do
+useEffect słuzy do synchronizacji danych 
+2. jest niskopoziomowym API który jest dość złozony i malo intuicyjny
+3. razem z useState oraz paroma innymi pozwala tworzyć własne hooki
+
+Wiem co chcecie zapytać:
+1. Jak zyc bez cyklu zycia
+2. gdzie pobierac dane
+3. slyszales kiedys o animacjach?
+4. to teraz gdzie moge ustawic listenera/zasubsrybowac się
+
+Ogólnie da się to wszystko ogarnać. 
+Ale trzeba trochę zmienić sposób myślenia i wyrobić sobie nową intuicje.
+Polecam wziąć miesiąc wolnego od Reacta, albo wejść do innej technologi na parę miesięcy. Po powrtocie nauczyć się jak uzywac Reacta od zera.
+
+To jest syntax useEffect. 
+Przyjmuje funkcje w ktorej mozemy sobie np. pobrac dane, zrobic ustawianie stanu, zasubsrybować. Wszystko o czym marzyliście.
+
+Okay. To tyle. Zadanka i domu.
+
+xD
+
+0. Kolejność dzialania jest taka. React najpierw renderuje tego jsx'a potem pyta sie komponentu co tam dla mnie masz w tym useEffect. React decyduje sie na uruchomienie zawartosci useEffecta po kazdym renderze.
+
+1. Uwaga, jesteśmy w funkcjach, i domknięciach. Jak useEffect się domknie na danym zestawie propsow i state'u, to nie będzie wiedział o nowych. 
+
+W klasach jest inaczej, w klasach, funkcje podrózują w czasie. Przez to ze `this` jest mutowalny. Oczywiście mozna to naprawić, ale to nie na teraz.
+
+<Przyklad z klikaniem i alertem od danego>
+
+2. React chce zeby useEffect wiedział od czego zalezna jest ta logika w useEffect
+Potrzebuje tego zeby wiedziec czy ma włączyć ten kod do synchronizacji podczas tego odpalenia czy nie. Nazywa się to "Dependency array", lub po prostu "deps".
+
+<Przyklad> Prosty przyklad, jezeli zmieni sie x to odpal hooka zeby dostosowac dane do nowych warunkow ktore zapanowaly w komponencie.
+
+I tutaj mozna dlugo mowic o depsach. Bo co np. kiedy uzywamy w useEffect funkcji, która ma jakąś zaleznosc? W wiekszosci przypadkow wystarczy wyciagnac tę funkcje całkiem poza komponent. Innym razem mozna wsadzic te funkcje do useEffect. Są scenariusze kiedy obie strategie zawodza, wtedy... wtedy zapraszam na kolejne warsztaty gdzie zajmiemy sie między innymi useCallback i useReducer :D 
+
+3. Mozna mieć więcej niz jeden useEffect w komponencie. Czyli mozemy rozdzielic logike na mniejsze, adekwatne fragmenty. Jakby porównanc do componenDidMount gdzie trzeba bylo wszystko do jego wrzucac do na plus.
+
+Kazdy useEffect dostaje wtedy swoje depsy.
+
+```
+
+---
+
+```notes
+Jak zrobić tego useEffecta z pobieraniem?
+```
+
+
+## Pobieranie z API
+<Appear>
+  <div>
+      <CodeMirror
+            value={useEffectRozwiazanie}
+            options={{
+              mode: 'jsx',
+              theme: 'night-owl',
+              lineNumbers: false,
+              readOnly: 'nocursor',
+            }}
+      />
+  </div>
+</Appear>
+
+---
+
+```notes
+Rób co chcesz. 
+Tworzymy sobie wspólnie hooka useFavouriteContact
+Czyli będziemy przechowywać w localStorage jeden kontakt, który będziemy traktować jako ulubiony. 
+Będzie miał podobną strukturę do useState, czyli zwróci array, pierwszy element to ulubiony, a drugi to 
+funkcja do updatowania ulubionego 
+
+```
+
+## useCoChcesz
+
+<Appear>
+  <div>
+    <strong style={{fontSize: '2em'}}>Może useFavouriteContact?</strong>
+  </div>
+</Appear>
+
+---
+
+```notes
+Będzie miał podobną strukturę do useState, czyli zwróci array, pierwszy element to ulubiony, a drugi to 
+funkcja do updatowania ulubionego.
+
+```
+
+## API 
+
+<Appear>
+  <div>
+    <CodeMirror
+            value={useFavCustom}
+            options={{
+              mode: 'jsx',
+              theme: 'night-owl',
+              lineNumbers: false,
+              readOnly: 'nocursor',
+            }}
+      />  </div>
+</Appear>
+
+---
+
+```notes
+Będzie miał podobną strukturę do useState, czyli zwróci array, pierwszy element to ulubiony, a drugi to 
+funkcja do updatowania ulubionego.
+
+```
+
+## API 
+
+<Appear>
+  <div>
+    <CodeMirror
+            value={useFavCustom}
+            options={{
+              mode: 'jsx',
+              theme: 'night-owl',
+              lineNumbers: false,
+              readOnly: 'nocursor',
+            }}
+      />  </div>
+</Appear>
+
+---
+
+```notes
+Gotowi żeby to zobaczyć? 
+
+Ten syntax z useStatem, że przyjmuje funkcje, to jest lazy loading. Można się tutaj bardziej rozpisać z logiką trochę jak ktoś potrzebuje
+```
+
+## Gotowiec 
+
+<Appear>
+  <div>
+    <CodeMirror
+            value={useFavCode}
+            options={{
+              mode: 'jsx',
+              theme: 'night-owl',
+              lineNumbers: false,
+              readOnly: 'nocursor',
+            }}
+      />  </div>
+</Appear>
+
+---
+
+## Czas na pisanie własnych hooków! 
+
+<Appear>
+  <div >1. Dodaj do hooka useFavouriteContact możliwość zapisywania całej listy ulubionych kontaktów (useFavouriteContacts)</div>
+  <div >2. Stwórz hooka useFetch, który robi fetch na danym URL. Najlepiej, żeby oddawał stan loading, error i odpowiedź.</div>
+  <div >1. Stwórz hooka, który nasłuchuje na pozycje kursora opuszczającego ekran i pokaż w tym czasie Alert "Nie zostawiaj nas!"</div>
+  <div >3. Stwórz wyszukiwarkę dla kontaktów (auto-completion input) budując hooka useSuggestion</div>
+  <div >4. ⭐Generalizuj działanie hooka useFavouriteContacts tak, żeby można było za jego pomocą zapisywać dowolne dane w localStorage</div>
+  <div >4. ⭐Generalizuj tego hooka tak, żeby można było wybrać typ storage</div>
+</Appear>
+
+---
+## Po odpowiedzi zapraszam wspólnie do repo na stronę:
+
+---

@@ -1,0 +1,32 @@
+{
+  "name": "hooks-presentation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "prebuild": "rimraf dist",
+    "build": "npm run build:site && npm run build:pdf",
+    "build:site": "mdx-deck build deck.mdx",
+    "build:pdf": "mdx-deck pdf deck.mdx",
+    "postbuild": "cpy --parents \"public/**\" ./dist"
+  },
+  "keywords": [],
+  "author": "Bart Widlarz <bart@thewidlarzgroup.com> (http://thewidlarzgroup.pl/)",
+  "license": "MIT",
+  "devDependencies": {
+    "cpy-cli": "^2.0.0",
+    "css-loader": "^1.0.0",
+    "mdx-deck": "^1.6.3",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.22.1"
+  },
+  "dependencies": {
+    "codemirror": "^5.39.2",
+    "emotion": "^9.2.6",
+    "react-codemirror2": "^5.1.0",
+    "react-emotion": "^9.2.6",
+    "react-pose": "^2.2.1",
+    "react-transition-group": "^2.4.0"
+  }
+}
