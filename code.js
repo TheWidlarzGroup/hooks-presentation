@@ -71,12 +71,11 @@ handleCosInnego= () => {
 `
 
 export const czystaFunkcja = `
-const Czysciutko = (a, b) => 
-      <div>{a + b}</div>
+const Czysciutko = (a, b) => a + b
 `
 
 export const hoverCode = `
-const Contact = ({ contact }: Props) => {
+const Contact = (contact) => {
   const [hover, setHover] = useState(false);
 
   const showDetails = () => setHover(true);
@@ -95,8 +94,6 @@ const filteredContacts = fullName.toLowerCase().includes(inputValue.toLowerCase(
 `
 
 export const oficjalnieUseEffect = `
-import React, { useState, useEffect } from 'react';
-
 function Example() {
   const [count, setCount] = useState(0);
 
@@ -149,8 +146,6 @@ export const przykladowoUseEffectDeps = `
 ` 
 
 export const kilkaUseEffect = `
-import React, { useState, useEffect } from 'react';
-
 function Example() {
   const [count, setCount] = useState(0);
 
@@ -178,8 +173,6 @@ function Example() {
 
 
 export const jaChceTylkoRaz = `
-import React, { useState, useEffect } from 'react';
-
 function Example() {
   const [count, setCount] = useState(0);
 
@@ -201,11 +194,11 @@ function Example() {
 export const useEffectRozwiazanie = `
 const Example = () => {
   const [inputValue, setInputValue] = useState('');
-  const [contacts, setContacts] = useState<ContactData[]>([]);
+  const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const doFetch = async (amount: number) => {
+  const doFetch = async (amount) => {
     try {
       setLoading(true);
       const res = await fetch('https://randomuser.me/api/?results=$amount'); // dodaj klamerki
@@ -230,10 +223,8 @@ const [fav, setFav] = useFavouriteContact();
 `
 
 export const useFavCode = `
-import { useState } from "react";
-
-export const useFavouriteContact = (): [string, (data: string) => void] => {
-  const [saved, setSaved] = useState<string>(() => {
+export const useFavouriteContact = () => {
+  const [saved, setSaved] = useState(() => {
     const valueFromLocal = localStorage.getItem("fav");
 
     if (!valueFromLocal) {
@@ -243,7 +234,7 @@ export const useFavouriteContact = (): [string, (data: string) => void] => {
     return valueFromLocal ? valueFromLocal : "";
   });
 
-  const update = (value: string) => {
+  const update = (value) => {
     localStorage.setItem("fav", value);
     setSaved(value);
   };

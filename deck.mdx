@@ -77,11 +77,9 @@ export default WhiteLayout
 
 # O czym są te warsztaty
 
-- funkcje i klasy
-- stan komponentu z useState
-- rózne rzeczy z useEffect
-- własne hooki
-- fajne linki
+- useState
+- useEffect
+- custom hooki
 
 ---
 
@@ -91,23 +89,30 @@ export default WhiteLayout
 
 ---
 
-export default DemoLayout
 
-<div style={{fontSize: 40, textAlign: 'left'}}>
-  <ul>
-    <li>Potrzebowałeś mieć stan albo efekty uboczne w komponencie Reactowym?</li>
-      <Appear>
-        <li>= klasa</li>
-        <li>Nie potrzebowałeś</li>
-        <li>= funkcja</li>
-      </Appear>
-  </ul>
-</div> 
+<Appear>
+  <div>
+      <strong style={{fontSize: '2em'}}>Potrzebowałeś mieć stan albo efekty uboczne w komponencie Reactowym </strong>
+  </div>
+  <div>
+      <strong style={{fontSize: '2em'}}>= klasa</strong>
+  </div>
+  <div>
+      <strong style={{fontSize: '2em'}}>Nie potrzebowałeś</strong>
+  </div>
+  <div>
+      <strong style={{fontSize: '2em'}}>= funkcja</strong>
+  </div>
+</Appear>
 
 ---
 
-
-export default DemoLayout
+```notes
+W wielu opracowaniach na temat React Hooksów można znaleźć tak napisany komponent z podpisem że to jest komponent klasowy.
+Ktoś z Was piszę tak komponenty dzisiaj?
+Coś Wam tutaj nie pasuje?
+Tak, nie potrzebujemy bindować, nie potrzeba konstruktora.
+```
 
 <div>
 
@@ -197,9 +202,14 @@ export default DemoLayout
 
 </div>
 
-```notes
-```
 ---
+
+
+```notes
+Tutaj już odchudzona wersja.
+Taką pewnie piszecie na codzień.
+Ten komponent używa setState do ustawiania swojego stanu wewnętrznego. 
+```
 
 <CodeMirror
       value={setState}
@@ -211,9 +221,11 @@ export default DemoLayout
       }}
 />
 
-```notes
-```
 ---
+
+```notes
+A tak wygląda komponent który używa hooka useState do tego samego celu.  
+```
 
 <CodeMirror
       value={useState}
@@ -225,17 +237,24 @@ export default DemoLayout
       }}
 />
 
-```notes
-```
 ---
-
-# useState
 
 ```notes
 Kilka rzeczy odnośnie hooków omówimy na przykładzie useState a kilka na useEffect
 ```
+
+# useState
+
+
 ---
 
+```notes
+tak wygląda syntax z useState
+jest tutaj kilka rzeczy
+- hook useState przyjmuje wartość początkową stanu w przy przypadku 0
+- zwraca tablice gdzie pierwszym elementem jest aktualna wartość stanu,
+- drugim elementem jest setter dla stanu, jest to funkcja która przyjmuje jako wartość nową wartość stanu
+```
 
 <CodeMirror
       value={syntaxUseState}
@@ -247,15 +266,12 @@ Kilka rzeczy odnośnie hooków omówimy na przykładzie useState a kilka na useE
       }}
 />
 
-```notes
-tak wygląda syntax z useState
-jest tutaj kilka rzeczy
-- hook useState przyjmuje wartość początkową stanu w przy przypadku 0
-- zwraca tablice gdzie pierwszym elementem jest aktualna wartość stanu,
-- drugim elementem jest setter dla stanu, jest to funkcja która przyjmuje jako wartość nową wartość stanu
-```
 ---
 
+```notes
+To co jest fajne w tym nowym syntaxie to to że dostajemy od razu settery 
+i nie musimy przepuszczać nowego stanu przez setState
+```
 
 <CodeMirror
       value={wiecejStatowUse}
@@ -267,9 +283,10 @@ jest tutaj kilka rzeczy
       }}
 />
 
+---
+
 ```notes
 ```
----
 
 <CodeMirror
       value={wiecejStateowNieUse}
@@ -281,17 +298,14 @@ jest tutaj kilka rzeczy
       }}
 />
 
-```notes
-```
-
 ---
-
-# Czym są czyste funkcje? 
-# (pure function)
 
 ```notes
 funkcje bez efektów ubocznych
 ```
+
+# Czym są czyste funkcje? 
+# (pure function)
 
 ---
 
@@ -331,6 +345,12 @@ w tym sensie jest czysty i w tym sensie hooki zbliazaja nas do programowania fun
 />
 
 ---
+
+```notes
+Czyste funkcje są proste dla ludzi i maszyn. 
+Funkcji uczyliśmy się w podstawówce na matmie.
+Na odmianę przejdźmy na chwilę do klas...
+```
 
 <CodeMirror
       value={czystaFunkcja}
