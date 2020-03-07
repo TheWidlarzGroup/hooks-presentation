@@ -70,6 +70,36 @@ handleCosInnego= () => {
 }
 `
 
+export const innaczejUseState = `
+const Clicker = () => {
+  const [clicks, setClicks] = useState(0)
+  const handleButtonClick = () => {
+      setClicks(c => c + 1)
+  }
+
+  return (
+      <button onClick={handleButtonClick}>Clicked { clicks } times</button>
+  )
+}`
+
+export const lazyUseState = `
+const Clicker = () => {
+  const [clicks, setClicks] = useState(() => {
+      const initialState = someExpensiveComputation(props)
+      return initialState
+    }    
+  )
+  
+  const handleButtonClick = () => {
+      setClicks(c => c + 1)
+  }
+
+  return (
+      <button onClick={handleButtonClick}>Clicked { clicks } times</button>
+  )
+}`
+
+
 export const czystaFunkcja = `
 const Czysciutko = (a, b) => a + b
 `

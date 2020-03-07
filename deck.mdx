@@ -13,6 +13,8 @@ import {
   syntaxUseState, 
   wiecejStatowUse, 
   wiecejStateowNieUse,
+  innaczejUseState,
+  lazyUseState,
   hoverCode,
   filtrowaniePoImieniu,
   oficjalnieUseEffect,
@@ -475,10 +477,43 @@ i nie musimy przepuszczać nowego stanu przez setState
 ---
 
 ```notes
+a tak wygląda kied mamy setStaty, dobrze po prostu pisac te pomocnicze funkcje
 ```
 
 <CodeMirror
       value={wiecejStateowNieUse}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+
+---
+
+```notes
+możemy też udpateować state funkcja, przez co nie musimy się odnosić do statu bezpośrednio
+```
+
+<CodeMirror
+      value={innaczejUseState}
+      options={{
+        mode: 'jsx',
+        theme: 'night-owl',
+        lineNumbers: false,
+        readOnly: 'nocursor',
+      }}
+/>
+
+---
+
+```notes
+możemy podać funkcje do initial statu, po to żeby zrobić ustalanie tego początkowego stanu leniwie
+```
+
+<CodeMirror
+      value={lazyUseState}
       options={{
         mode: 'jsx',
         theme: 'night-owl',
