@@ -170,9 +170,12 @@ useEffect(() => {
 ` 
 
 export const przykladowoUseEffectDeps = `
+  setName("kamil")
+  setCount(2)
+...
   useEffect(() => {
-    document.title = count
-  }, [count])
+    document.title = count + name
+  }, [count, name])
 ` 
 
 export const kilkaUseEffect = `

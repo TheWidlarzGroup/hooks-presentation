@@ -962,6 +962,11 @@ I nie jak się count zmieni.
 
 ---
 
+
+# Ankieta: bit.ly/hooks-krk
+
+---
+
 # Czas na kolejne zadania!
 
 <Appear>
@@ -977,7 +982,7 @@ I nie jak się count zmieni.
 <img  height="500x" src="public/qr-code.png" />
 
 ---
-
+<!-- 
 ```notes
 No to teraz zaczyna się magia!
 Ankieta live:
@@ -1028,7 +1033,7 @@ Kazdy useEffect dostaje wtedy swoje depsy.
 
 ```
 
----
+--- -->
 
 ```notes
 Jak zrobić tego useEffecta z pobieraniem?
@@ -1058,7 +1063,6 @@ Tworzymy sobie wspólnie hooka useFavouriteContact
 Czyli będziemy przechowywać w localStorage jeden kontakt, który będziemy traktować jako ulubiony. 
 Będzie miał podobną strukturę do useState, czyli zwróci array, pierwszy element to ulubiony, a drugi to 
 funkcja do updatowania ulubionego 
-
 ```
 
 ## useCoChcesz
@@ -1122,10 +1126,10 @@ Ten syntax z useStatem, że przyjmuje funkcje, to jest lazy loading. Można się
 <Appear>
   <div >1. Dodaj do hooka useFavouriteContact możliwość zapisywania całej listy ulubionych kontaktów (useFavouriteContacts)</div>
   <div >2. Stwórz hooka useFetch, który robi fetch na danym URL. Najlepiej, żeby oddawał stan loading, error i odpowiedź.</div>
-  <div >1. Stwórz hooka, który nasłuchuje na pozycje kursora opuszczającego ekran i pokaż w tym czasie Alert "Nie zostawiaj nas!"</div>
-  <div >3. Stwórz wyszukiwarkę dla kontaktów (auto-completion input) budując hooka useSuggestion</div>
-  <div >4. ⭐Generalizuj działanie hooka useFavouriteContacts tak, żeby można było za jego pomocą zapisywać dowolne dane w localStorage</div>
-  <div >4. ⭐Generalizuj tego hooka tak, żeby można było wybrać typ storage</div>
+  <div >3. Stwórz hooka, który nasłuchuje na pozycje kursora opuszczającego ekran i pokaż w tym czasie Alert "Nie zostawiaj nas!"</div>
+  <div >4. Stwórz wyszukiwarkę dla kontaktów (auto-completion input) budując hooka useSuggestion</div>
+  <div >5. ⭐Generalizuj działanie hooka useFavouriteContacts tak, żeby można było za jego pomocą zapisywać dowolne dane w localStorage</div>
+  <div >6. ⭐Generalizuj tego hooka tak, żeby można było wybrać typ storage</div>
 </Appear>
 
 ---
