@@ -16,10 +16,10 @@
   "license": "MIT",
   "devDependencies": {
     "cpy-cli": "^2.0.0",
-    "css-loader": "^1.0.0",
-    "mdx-deck": "^1.6.3",
+    "css-loader": "^6.7.3",
+    "mdx-deck": "^1.10.2",
     "rimraf": "^2.6.2",
-    "style-loader": "^0.22.1"
+    "style-loader": "^3.3.1"
   },
   "dependencies": {
     "codemirror": "^5.39.2",
